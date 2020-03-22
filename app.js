@@ -19,6 +19,7 @@
     //public
         app.use(express.static(path.join(__dirname,"public")))
        // app.use(express.static('public'));
+      // app.use('/static', express.static('public'));
 
 //rotas
     app.use('/admin',admin)
