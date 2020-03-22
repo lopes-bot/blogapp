@@ -11,7 +11,10 @@ router.get('/posts',(req,res)=>{
 })
 
 router.get('/categorias',(req,res)=>{
-    res.send("Páginas de categorias")
+    res.render("../views/admin/categorias.handlebars")
+})
+router.get('/categorias/add',(req,res)=>{
+        res.render("../views/admin/addcategoria.handlebars")
 })
 
 
