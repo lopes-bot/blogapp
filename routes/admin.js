@@ -14,7 +14,13 @@ router.get('/posts',(req,res)=>{
 })
 
 router.get('/categorias',(req,res)=>{
-    res.render("../views/admin/categorias.handlebars")
+    Categoria.find().sort({data:'desc'}).then((categorias)=>{
+        res.render("../views/admin/categorias.handlebars",{categorias: categorias.map(categoria => categoria.toJSON())})
+    }).catch((err)=>{
+        req.flash("error_msq","Hover um erro ao lista categorias!")
+        res.redirect("/admin")
+    })
+    
 })
 router.get('/categorias/add',(req,res)=>{
         res.render("../views/admin/addcategoria.handlebars")
