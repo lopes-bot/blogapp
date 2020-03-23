@@ -34,7 +34,7 @@
 
         mongoose.Promise = global.Promise;
         mongoose.connect("mongodb://localhost/blogapp").then(()=>{
-            console.log("conectado ao mongo")
+            console.log("conectado ao mongoDB!")
         }).catch((err)=>{
             console.log("erro ao de conexão: "+err)
         })
