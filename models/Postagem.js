@@ -20,7 +20,7 @@ const Postagem = new schema({
         required:true
     },
     categoria:{
-        type:Schema.Types.ObjectId,
+        type:schema.Types.ObjectId,
         ref:"categorias",
         required: true
     },
