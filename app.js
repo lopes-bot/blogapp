@@ -12,6 +12,10 @@
     const Postagem = mongoose.model("postagens")
     require("./models/Categoria")
     const Categoria = mongoose.model("categorias")
+    const usuarios = require("./routes/usuario")
+    const passport = require("passport")
+    require("./config/auth")(passport)
+    
 
 //configurações
     //sessão
@@ -118,7 +122,7 @@
             res.redirect("/")
         })
     })
-
+    app.use('/usuarios',usuarios)
     app.use('/admin',admin)
 //outros
 const PORT = 8081
